@@ -1,0 +1,71 @@
+<div class="header-area">
+	<div class="main-header ">
+		<div class="header-top d-none d-lg-block">
+			<!-- Left Social -->
+			<div class="header-left-social">
+				<ul style="margin-top: 6%;">    
+					<li><a href="index.html"><img src="assets/assets/img/logo/logo.png" alt=""></a></li>
+					
+				</ul>
+			</div>
+			<div class="container">
+				<div class="col-xl-12">
+					<div class="row d-flex justify-content-between align-items-center">
+						<div class="header-info-left">
+							<ul>     
+								<li>info@formevo.tn </li>
+								<li>(+216) 70 696 686</li>
+							</ul>
+						</div>
+						<div class="header-info-right">
+							<ul>    
+								<li><a (click)="_auth.logoutUser()" ><i class="icon-switch2"></i> Logout</a></li>
+							
+							</ul>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="header-bottom header-sticky">
+			<!-- Logo -->
+		
+			<div class="logo d-none d-lg-block">
+				
+				<img [src]="'http://127.0.0.1/portfolio/assets/'+ user.photo" class="rounded-circle mr-2" height="34" alt="">
+			    <span>{{user.name}}</span>
+				<span class="badge bg-success ml-md-3 mr-md-auto">Online</span>
+				
+				
+			</div>
+			<div class="container">
+				<div class="menu-wrapper">
+					<!-- Logo -->
+					
+					<div class="logo logo2 d-block d-lg-none">
+						<a href="index.html"><img src="assets/assets/img/logo/logo.png" alt=""></a>
+					</div>
+					<!-- Main-menu -->
+					<div class="main-menu d-none d-lg-block">
+						<nav>
+							<ul id="navigation">                                                                                          
+								<li><a routerLink="/Client">Home</a></li>
+								<li><a href="about.html">About</a></li>
+								<li><a routerLink="/etudiant/monapprentissage">Courses</a></li>
+								<li><a routerLink="/etudiant">Instructors</a></li>
+								
+							  
+							</ul>
+						</nav>
+					</div>
+				 
+				</div>
+				
+			</div>
+		</div>
+	  </div>
+
+
+    </div>
+	
