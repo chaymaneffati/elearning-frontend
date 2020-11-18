@@ -1,7 +1,9 @@
+import { AnimationKeyframesSequenceMetadata } from '@angular/animations';
+import { NonNullAssert } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 
 import {Router, ActivatedRoute, ParamMap  } from '@angular/router';
-import { AuthService } from 'src/app/services/auth.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-detail-formations',
@@ -35,11 +37,8 @@ export class DetailFormationsComponent implements OnInit {
 
   voirCours= true;
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');
-
-
-
     this._auth.getCommentaire(this.id).subscribe(
       res=>{
         this.comments = res;
@@ -52,7 +51,7 @@ export class DetailFormationsComponent implements OnInit {
       }
     );
 
-
+  
 
 
     this._auth.detailFormation(this.id).subscribe(
@@ -68,20 +67,17 @@ export class DetailFormationsComponent implements OnInit {
     );
 
 
+    
 
-
-    this._auth.getCours(this.id).subscribe(
-      res=>{
-        this.cours = res;
-     
-      },
-      err=>{
-        console.log(err);
-        
-      }
-    );
-
-
+   this._auth.getCours(this.id).subscribe(
+    res=>{
+      this.cours = res;
+    },
+    err=>{
+      console.log(err);
+      
+    }
+  );
 
 
     this._auth.getQuiz(this.id).subscribe(
@@ -107,7 +103,11 @@ export class DetailFormationsComponent implements OnInit {
 
   }
 
-
+  delete(id: any){
+    this._auth.deleteCommentaire(id).toPromise().finally(()=> {
+      this.ngOnInit();
+    });
+  }
   commenter(){
 
     let user = this._auth.getUserData();

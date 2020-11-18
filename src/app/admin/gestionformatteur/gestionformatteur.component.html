@@ -51,9 +51,10 @@
                                     <td>{{f.email}}</td>
 									<td>{{f.adress}}</td>
 									<td>{{f.phone}}</td>
-                                    <td> <button (click)="delete(f.id)" class="btn btn-danger">Delete</button>
-                                    
-                                     <a [routerLink]="[ '/board/updateformatteur', f.id ]" class="btn btn-info"> Update</a> 
+                                    <td> 
+									
+									 <button (click)="delete(f.id)" class="btn btn-danger">Delete</button>
+                                     <button [routerLink]="[ '/board/updateformatteur', f.id ]" class="btn btn-outline-info mx-2"> Update</button> 
                                     </td>
 								</tr>
 								

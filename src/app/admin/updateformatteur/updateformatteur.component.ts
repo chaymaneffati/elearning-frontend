@@ -9,6 +9,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class UpdateformatteurComponent implements OnInit {
   @ViewChild('fileInput', { static: false}) fileInput: ElementRef;
+  categories: any;
   constructor(private route : ActivatedRoute, private _auth: AuthService) { }
 
 
@@ -25,20 +26,31 @@ export class UpdateformatteurComponent implements OnInit {
       login:'' ,
      adress: '',
      phone: '',
-     password:''
+     password:'',
+     categorie:''
 
   }
 
 
 
   ngOnInit(): void {
+    
+    this._auth.getAllCategorie().subscribe(
+      res=>{
+        this.categories = res;
+      },
+      err=>{
+        console.log(err);
+        
+      }
+    );
     this.id = this.route.snapshot.paramMap.get('id');
   
     this._auth.detailUser(this.id).subscribe(
       res=>{
      
 
-        console.log(this.user);
+        this.user=res;
         
       },
       err=>{

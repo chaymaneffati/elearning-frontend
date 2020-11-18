@@ -82,6 +82,20 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group form-group-feedback form-group-feedback-right">
+                                            
+                                            <select [(ngModel)]="user.categorie" class="form-control">
+
+                                                <option *ngFor="let c of categories" [ngValue]="c.titre">{{c.titre}}</option>
+                                              
+        
+                                            </select>
+        
+                                        </div>
+                                    </div>
+                                </div>
 
                                 <div class="form-group form-group-feedback form-group-feedback-right">
                                     <input #fileInput type="file" class="form-control">
@@ -90,7 +104,7 @@
 
                             
 
-                                <button (click)="update()" type="submit" class="btn bg-teal-400 btn-labeled btn-labeled-right"><b><i class="icon-plus3"></i></b> Create account</button>
+                                <button (click)="update()" type="submit" class="btn bg-teal-400 btn-labeled btn-labeled-right"><b><i class="icon-plus3"></i></b>  Update formateur</button>
                             </div>
                         </div>
                     </div>

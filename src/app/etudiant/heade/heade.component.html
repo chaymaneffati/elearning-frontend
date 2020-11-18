@@ -19,7 +19,7 @@
 						</div>
 						<div class="header-info-right">
 							<ul>    
-								<li><a (click)="_auth.logoutUser()" ><i class="icon-switch2"></i> Logout</a></li>
+								<li><a (click)="_auth.logoutUser()" ><i class="icon-switch2"></i> Déconnexion</a></li>
 							
 							</ul>
 							
@@ -35,7 +35,7 @@
 				
 				<img [src]="'http://127.0.0.1/portfolio/assets/'+ user.photo" class="rounded-circle mr-2" height="34" alt="">
 			    <span>{{user.name}}</span>
-				<span class="badge bg-success ml-md-3 mr-md-auto">Online</span>
+				<span class="badge bg-success ml-md-3 mr-md-auto">On ligne</span>
 				
 				
 			</div>
@@ -50,10 +50,10 @@
 					<div class="main-menu d-none d-lg-block">
 						<nav>
 							<ul id="navigation">                                                                                          
-								<li><a routerLink="/Client">Home</a></li>
-								<li><a href="about.html">About</a></li>
+								<li><a routerLink="/etudiant">Accueil</a></li>
+								<li><a href="/about-us">About</a></li>
 								<li><a routerLink="/etudiant/monapprentissage">Courses</a></li>
-								<li><a routerLink="/etudiant">Instructors</a></li>
+								<li><a routerLink="/etudiant/Cour">Instructors</a></li>
 								
 							  
 							</ul>

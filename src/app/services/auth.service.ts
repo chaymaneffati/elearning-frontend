@@ -205,9 +205,12 @@ deleteCours(id:any){
   return this.http.get<any>(this.urlCours + 'delete&id=' + id);
 }
 
+getoneCours(id:any){
 
+  return this.http.get<any>(this.urlCours + 'detail&id=' + id);
+}
 getCours(id:any){
-
+  // return this.http.get("http://127.0.0.1/portfolio/index.php?controller=cours", payload);
   return this.http.get<any>(this.urlCours + 'getCours&id=' + id);
 }
 
@@ -513,4 +516,9 @@ registerCommentaire(cmnt: any){
   
   
   }
+  deleteCommentaire(id:any){
+
+    return this.http.get<any>(this.urlCommentaire + 'delete&id=' + id);
+  }
+  
 }

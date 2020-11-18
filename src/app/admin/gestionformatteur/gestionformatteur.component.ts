@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -8,13 +9,12 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class GestionformatteurComponent implements OnInit {
 
-  constructor(public _auth: AuthService) { }
+  constructor(public _auth: AuthService,private route: ActivatedRoute) { }
 
   formatteurs: any;
 
 
   ngOnInit(): void {
-
     this._auth.getAllFormatteur().subscribe(
       res=>{
         this.formatteurs = res;

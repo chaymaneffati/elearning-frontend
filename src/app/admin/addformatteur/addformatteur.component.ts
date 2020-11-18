@@ -1,6 +1,7 @@
 import { Component, OnInit , ElementRef, ViewChild} from '@angular/core';
-
+import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import {AuthService} from '../../services/auth.service';
+
 @Component({
   selector: 'app-addformatteur',
   templateUrl: './addformatteur.component.html',
@@ -9,7 +10,11 @@ import {AuthService} from '../../services/auth.service';
 export class AddformatteurComponent implements OnInit {
 
   @ViewChild('fileInput', { static: false}) fileInput: ElementRef;
-  constructor(private _auth: AuthService) { }
+  
+  constructor(private _auth: AuthService, private fb: FormBuilder) { 
+    this.angForm = this.fb.group({
+    name: ['', Validators.required ]
+ });}
 
   alert = false;
   alert1 = false;
@@ -28,8 +33,9 @@ export class AddformatteurComponent implements OnInit {
 
   }
 
-  categories : any;
 
+  categories : any;
+  angForm: FormGroup;
   ngOnInit(): void {
 
     this._auth.getAllCategorie().subscribe(

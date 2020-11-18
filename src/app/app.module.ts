@@ -7,7 +7,7 @@ import { AdminComponent } from './admin/admin.component';
 import { ClientComponent } from './client/client.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
-import { FormsModule} from '@angular/forms';
+
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './services/auth.service';
 import { HeaderComponent } from './admin/header/header.component';
@@ -50,6 +50,7 @@ import { AboutUsComponent } from './client/about-us/about-us.component';
 import { DashComponent } from './formatteur/dash/dash.component';
 import { PostsComponent } from './formatteur/posts/posts.component';
 import { MesFormationComponent } from './formatteur/mes-formation/mes-formation.component';
+import{ FormsModule ,ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -102,7 +103,10 @@ import { MesFormationComponent } from './formatteur/mes-formation/mes-formation.
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule , 
+    ReactiveFormsModule
+
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

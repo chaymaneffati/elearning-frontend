@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AddformatteurComponent } from './admin/addformatteur/addformatteur.component';
 import { AdminComponent } from './admin/admin.component';
@@ -32,11 +32,13 @@ import { PasserTestComponent } from './etudiant/passer-test/passer-test.componen
 import { DashComponent } from './formatteur/dash/dash.component';
 import { PostsComponent } from './formatteur/posts/posts.component';
 import { MesFormationComponent } from './formatteur/mes-formation/mes-formation.component';
+import { AboutUsComponent } from './client/about-us/about-us.component';
+
 
 const routes: Routes = [
 
 
-    {path:'Client' , component: ClientComponent},
+    
     
     {path: 'board'  ,    canActivate: [AuthGuard] , component: AdminComponent , children: [
         {path: '' , component: DashboardComponent},
@@ -70,17 +72,19 @@ const routes: Routes = [
 
 
     {path:'etudiant' , canActivate: [EtudiantGuard] ,  component: EtudiantComponent , children: [
-
-      {path: '' , component: ListFormationsComponent},
+      {path: '' , component: ClientComponent},
+      {path: 'Cour' , component: ListFormationsComponent},
       {path: 'monapprentissage' , component: MonapprentissageComponent},
       {path: 'detailformation/:id' , component: DetailFormationsComponent},
       {path: 'passerquiz/:id' , component: PasserQuizComponent},
-      {path: 'passertest/:id' , component: PasserTestComponent}
+      {path: 'passertest/:id' , component: PasserTestComponent},
+    
+       
 
 
 
     ]},
-
+    {path:'about-us',component:AboutUsComponent},
 
     {path: '' , component: LoginComponent},
     {path: 'register' , component: RegisterComponent}

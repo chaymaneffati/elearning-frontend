@@ -85,13 +85,13 @@
 
 
                                 <div class="form-group form-group-feedback form-group-feedback-right">
-                                    <input #fileInput type="file" class="form-control">
+                                    <input  [(ngModel)]="formation.image" #fileInput type="file" class="form-control">
                                   
                                 </div>
 
                             
 
-                                <button (click)="register()" type="submit" class="btn bg-teal-400 btn-labeled btn-labeled-right"><b><i class="icon-plus3"></i></b> Create formation</button>
+                                <button (click)="register()" type="submit" class="btn bg-teal-400 btn-labeled btn-labeled-right"><b><i class="icon-plus3"></i></b> Update formation</button>
                             </div>
                         </div>
                     </div>

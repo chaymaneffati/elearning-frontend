@@ -7,10 +7,11 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./gestioncategorie.component.css']
 })
 export class GestioncategorieComponent implements OnInit {
+  
 
 
   constructor(public _auth: AuthService) { }
-
+  id: number;
   categories: any;
 
   upt = false;
@@ -37,7 +38,7 @@ cat = {
 
 
   }
-  
+
   delete(id: any){
 
     this._auth.deleteCategorie(id).subscribe(
@@ -72,4 +73,9 @@ cat = {
 
 
   }
+  up(titre,i){
+    this.id=i;
+    this.cat.titre =titre;
+  }
 }
+

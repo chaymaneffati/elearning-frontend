@@ -47,11 +47,11 @@
 									
                                     
                                     <td> <button (click)="delete(f.id)" class="btn btn-danger">Delete</button>
-                                        <button (click)="upt = true; index = i" class="btn btn-info">Update</button>
+                                        <button (click)="up(f.titre,i)" class="btn btn-info">Update</button>
                                     
                                     </td>
 
-                                    <td *ngIf="upt && index == i">   <input [(ngModel)]="cat.titre"> <button class="btn btn-dark" (click)="update(f.id)">update</button>   </td>
+                                    <td *ngIf="id == i">   <input [(ngModel)]="cat.titre"> <button class="btn btn-dark" (click)="update(f.id)">update</button>   </td>
 								</tr>
 								
 							</tbody>

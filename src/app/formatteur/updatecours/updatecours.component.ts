@@ -25,6 +25,20 @@ export class UpdatecoursComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
+    this._auth.getoneCours(this.id).subscribe(
+      res=>{
+     
+
+        this.cours=res;
+        console.log(this.cours);
+        
+        
+      },
+      err=>{
+        console.log(err);
+        
+      }
+    );
   }
 
 
@@ -40,7 +54,7 @@ export class UpdatecoursComponent implements OnInit {
     file.set('titre', this.cours.titre);
    
     file.set('date' , this.cours.date);
-
+    this.id = this.route.snapshot.paramMap.get('id');
     this._auth.updateCours(file, this.id).subscribe(
 
       res=>{

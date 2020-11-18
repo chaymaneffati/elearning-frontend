@@ -26,6 +26,7 @@ export class UpdateformationComponent implements OnInit {
       duree:'' ,
       etat : '',
       categorie: '',
+      image:''
 
 
   }
@@ -45,7 +46,21 @@ id:any;
         
       }
     );
+    
+    this._auth.detailFormation(this.id).subscribe(
+      res=>{
+     
 
+        this.formation=res;
+        console.log(this.formation);
+        
+        
+      },
+      err=>{
+        console.log(err);
+        
+      }
+    );
   }
 
 
