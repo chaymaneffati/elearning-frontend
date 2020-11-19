@@ -16,7 +16,7 @@ export class AddformatteurComponent implements OnInit {
     name: ['', Validators.required ]
  });}
 
-  alert = false;
+  alert = true;
   alert1 = false;
 
 
@@ -68,7 +68,7 @@ export class AddformatteurComponent implements OnInit {
     file.set('phone' , this.user.phone);
     file.set('password' , this.user.password);
     file.set('categorie' , this.user.categorie);
-
+    this.formValidation(file);
 
     this._auth.registerFormatteur(file).subscribe(
 
@@ -91,6 +91,10 @@ export class AddformatteurComponent implements OnInit {
     );
 
   }
-
+  formValidation(file:FormData){
+    if(file.get('name')==null || file.get('name')=='')
+      this.alert=true;
+      else this.alert = false;
+  }
 
 }

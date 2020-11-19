@@ -1,5 +1,16 @@
 
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
 <div class="container">
 
 
@@ -7,7 +18,7 @@
     <div class="row m-5">
 
             <h1 class="lead">
-                Gestion des formatteurs
+                Gestion des formateurs
             </h1>
 
 
@@ -17,10 +28,10 @@
                  	<!-- Extra large table -->
 				<div class="card " style="width: 1000px;">
 					<div class="card-header header-elements-inline">
-						<h5 class="card-title">Extra large table</h5>
+						<h5 class="card-title">Liste des formateurs</h5>
 						<div class="header-elements">
 							<div class="list-icons">
-		                		<a routerLink="/board/addformatteur" class="btn btn-dark text-white" >Add</a>
+		                		<a routerLink="/board/addformatteur" class="btn btn-success text-white" >Ajouter</a>
 		                	
 		                	</div>
 	                	</div>
@@ -29,15 +40,15 @@
 				
 
 					<div class="table-responsive">
-						<table class="table table-xl">
+						<table class="table table-striped">
 							<thead>
 								<tr>
 									<th>Photo</th>
-									<th>First Name</th>
-									<th>Last Name</th>
+									<th>Nom</th>
+									<th>Prenom</th>
                                     <th>Email</th>
-                                    <th>Adress</th>
-									<th>Phone</th>
+                                    <th>Adresse</th>
+									<th>Téléphone</th>
 									<th>Action</th>
                                     
                                     
@@ -53,8 +64,8 @@
 									<td>{{f.phone}}</td>
                                     <td> 
 									
-									 <button (click)="delete(f.id)" class="btn btn-danger">Delete</button>
-                                     <button [routerLink]="[ '/board/updateformatteur', f.id ]" class="btn btn-outline-info mx-2"> Update</button> 
+									 <button (click)="delete(f.id)" class="btn btn-danger">Supprimer</button>
+                                     <button [routerLink]="[ '/board/updateformatteur', f.id ]" class="btn btn-info mx-2">Modifier</button> 
                                     </td>
 								</tr>
 								
@@ -75,3 +86,5 @@
 
 
 </div>
+</body>
+</html>
