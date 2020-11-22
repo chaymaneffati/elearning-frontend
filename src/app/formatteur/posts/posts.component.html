@@ -5,7 +5,7 @@
 
 
 
-    <h1 class="m-4 lead">Resultats des tests passés par les etudiant</h1>
+    <h1 class="m-4 lead">Resultats des tests/quiz </h1>
 
 
 
@@ -14,8 +14,8 @@
 
         <thead>
             <tr>
-                <th>name</th>
-                <th>lastname</th>
+                <th>Nom</th>
+                <th>Prénom</th>
                 <th>test/quiz</th>
                 <th>score</th>
                 <th>action</th>
@@ -34,7 +34,7 @@
                 <td>{{p.test}}</td>
                 <td>{{p.score}} / 20</td>
                 <td>
-                <button (click)="delete(p.id)" class="btn btn-danger bg-danger">delete</button>    
+                <button (click)="delete(p.id)" class="btn btn-danger bg-danger">Supprimer</button>    
                 </td>
             </tr>
 

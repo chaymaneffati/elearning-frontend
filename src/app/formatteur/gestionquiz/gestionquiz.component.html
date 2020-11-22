@@ -1,3 +1,5 @@
+
+
 <!-- Page content -->
 <div class="page-content">
 
@@ -14,8 +16,8 @@
                         <div class="card mb-0">
                             <div class="card-body">
                                 <div class="text-center mb-3">
-                                    <h5 class="mb-0">Pour acceder au quiz</h5>
-                                    <span class="d-block text-muted">slectionner une formation </span>
+                                    <h5 class="mb-0">Accéder au quiz</h5>
+                                    <span class="d-block text-muted">Sélectionner une formation </span>
                                 </div>
 
 
@@ -34,7 +36,7 @@
                  
                             
 
-                                <button (click)="chercher()" type="submit" class="btn bg-teal-400 btn-labeled btn-labeled-right"> Voir quiz</button>
+                                <button (click)="chercher()" type="submit" class="btn bg-teal-400 btn-labeled btn-labeled-right"> Afficher quiz</button>
                             </div>
                         </div>
                     </div>
@@ -81,7 +83,7 @@
                             <div class="card-body">
                                 <div class="text-center mb-3 row">
                                     <h5 class="mb-0 ml-3">Liste des quiz de cette formation</h5>
-                                     <button (click)="newQuiz()" type="submit" class="ml-auto mr-2 btn bg-teal-400 btn-labeled btn-labeled-right"> new quiz</button>
+                                     <button (click)="newQuiz()" type="submit" class="ml-auto mr-2 btn bg-teal-400  btn-labeled btn-labeled-right"> Nouveau quiz</button>
                                    
                                 </div>
 
@@ -91,7 +93,7 @@
 
                                     <tr>
                                         <th>#</th>
-                                        <th>titre</th>
+                                        <th>Titre</th>
                                         <th>action</th>
 
 
@@ -103,9 +105,9 @@
 
                                         <td>{{q.id}}</td>
                                         <td>{{q.titre}}</td>
-                                        <td><button (click)="voirDetailQuiz(q.id); idQuizDeatil = q.id" class="btn btn-outline-info">Voir Quiz</button>
+                                        <td><button (click)="voirDetailQuiz(q.id); idQuizDeatil = q.id" class="btn btn-outline-info">Ajouter question</button>
                                         
-                                        <button (click)="deleteQuiz(q.id)" class="btn btn-danger">delete</button>
+                                        <button (click)="deleteQuiz(q.id)" class="btn btn-danger">Supprimer</button>
                                         
                                         </td>
 
@@ -169,7 +171,7 @@
                         <div class="card mb-0">
                             <div class="card-body">
                                 <div class="text-center mb-3">
-                                    <h5 class="mb-0 ml-3">Create New Quiz</h5>
+                                    <h5 class="mb-0 ml-3">Créer nouveau quiz</h5>
                                 </div>
 
 
@@ -187,7 +189,7 @@
                                 </div>
                  
                             
-                                <button (click)="ajout()" type="submit" class="btn bg-teal-400 btn-labeled btn-labeled-right"><b><i class="icon-plus3"></i></b> Create quiz</button>
+                                <button (click)="ajout()" type="submit" class="btn bg-teal-400 btn-labeled btn-labeled-right"><b><i class="icon-plus3"></i></b> Valider</button>
 
 
                               
@@ -235,7 +237,7 @@
                         <div class="card mb-0">
                             <div class="card-body">
                                 <div class="text-center mb-3">
-                                    <h5 class="mb-0 ml-3">Quiz detail</h5>
+                                    <h5 class="mb-0 ml-3">Veuillez remplir ce formulaire</h5>
                                     <h6 class="mb-0 ml-3">{{detailQuiz.titre}}</h6>
 
                                 </div>
@@ -243,7 +245,7 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group form-group-feedback form-group-feedback-right">
-                                            <input type="text" [(ngModel)]="question.text" class="form-control" placeholder="question">
+                                            <input type="text" [(ngModel)]="question.text" class="form-control" placeholder="Question">
                                           
                                         </div>
                                     </div>
@@ -310,7 +312,7 @@
                             <div class="col-md-3">
 
                                 
-                                <button (click)="ajoutOption()" type="submit" class="btn bg-teal-400 btn-labeled btn-labeled-right"><b><i class="icon-plus3"></i></b> add option</button>
+                                <button (click)="ajoutOption()" type="submit" class="btn bg-teal-400 btn-labeled btn-labeled-right"><b><i class="icon-plus3"></i></b> Ajouter option</button>
 
 
                             </div>
@@ -321,7 +323,7 @@
 
 
 
-                                <button (click)="ajoutQuestion()" type="submit" class="btn bg-teal-400 btn-labeled btn-labeled-right"><b><i class="icon-plus3"></i></b> enregistre le question</button>
+                                <button (click)="ajoutQuestion()" type="submit" class="btn bg-teal-400 btn-labeled btn-labeled-right"><b><i class="icon-plus3"></i></b> Enregistrer la question</button>
 
                               
                             </div>

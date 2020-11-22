@@ -1,4 +1,15 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
 
 <div class="container">
 
@@ -17,10 +28,10 @@
                  	<!-- Extra large table -->
 				<div class="card " style="width: 1000px;">
 					<div class="card-header header-elements-inline">
-						<h5 class="card-title">Extra large table</h5>
+						<h5 class="card-title">Liste des formations</h5>
 						<div class="header-elements">
 							<div class="list-icons">
-		                		<a routerLink="/board/ajoutformation" class="btn btn-dark text-white" >Add</a>
+		                		<a routerLink="/board/ajoutformation" class="btn btn-success text-white" >Ajouter</a>
 		                	
 		                	</div>
 	                	</div>
@@ -29,15 +40,15 @@
 				
 
 					<div class="table-responsive">
-						<table class="table table-xl">
+						<table class="table table-striped">
 							<thead>
 								<tr>
 									<th>Photo</th>
 									<th>titre</th>
 									<th>date</th>
-                                    <th>duree</th>
-                                    <th>etat</th>
-									<th>Categorie</th>
+                                    <th>durée</th>
+                                    <th>état</th>
+									<th>Catégorie</th>
 									<th>Action</th>
                                     
                                     
@@ -51,9 +62,9 @@
                                     <td>{{f.duree}}</td>
 									<td>{{f.etat}}</td>
 									<td>{{f.categorie}}</td>
-                                    <td> <button (click)="delete(f.id)" class="btn btn-danger">Delete</button>
+                                    <td> <button (click)="delete(f.id)" class="btn btn-danger">Supprimer</button>
                                     
-                                     <a [routerLink]="[ '/board/updateformation', f.id ]" class="btn btn-info"> Update</a> 
+                                     <a [routerLink]="[ '/board/updateformation', f.id ]" class="btn btn-info">Modifier</a> 
                                     </td>
 								</tr>
 								
@@ -74,3 +85,5 @@
 
 
 </div>
+</body>
+</html>

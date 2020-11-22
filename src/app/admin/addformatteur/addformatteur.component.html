@@ -27,27 +27,27 @@
 
                                 <div *ngIf="alert1" class=" my-3  alert bg-danger text-white alert-styled-left alert-dismissible">
 									<button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
-									<span class="font-weight-semibold">Erreur!</span> EMail existe <a href="#" class="alert-link"></a>
+									<span class="font-weight-semibold">Erreur!</span> Email existe <a href="#" class="alert-link"></a>
 							    </div>
 
                      
                                 <div class="form-group form-group-feedback form-group-feedback-right">
-                                    <input type="text" class="form-control" [(ngModel)]="user.name" required placeholder="Choose name">
-                                   
+                                    <input type="text" class="form-control" [(ngModel)]="user.name" required placeholder="nom">
+                                    <div *ngIf="alertValidation.name" class=" my-3  alert bg-danger text-white alert-styled-left alert-dismissible">champ obligatoire</div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group form-group-feedback form-group-feedback-right">
-                                            <input type="text" class="form-control" [(ngModel)]="user.lastname" required placeholder="last name">
-                                           
+                                            <input type="text" class="form-control" [(ngModel)]="user.lastname" required placeholder="prénom">
+                                            <div *ngIf="alertValidation.lastname" class=" my-3  alert bg-danger text-white alert-styled-left alert-dismissible">champ obligatoire</div>
                                         </div>
                                     </div>
 
                                     <div class="col-md-6">
                                         <div class="form-group form-group-feedback form-group-feedback-right">
-                                            <input type="email" class="form-control" [(ngModel)]="user.email" placeholder="email">
-                                            
+                                            <input type="email" class="form-control" [(ngModel)]="user.email"pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="email">
+                                            <div *ngIf="alertValidation.email"class=" my-3  alert bg-danger text-white alert-styled-left alert-dismissible">champ obligatoire</div>
                                         </div>
                                     </div>
                                 </div>
@@ -59,22 +59,22 @@
                                       
 
                                     </select>
-
+                                    <div *ngIf="alertValidation.categorie"class=" my-3  alert bg-danger text-white alert-styled-left alert-dismissible">champ obligatoire</div>
                                 </div>
 
 
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group form-group-feedback form-group-feedback-right">
-                                            <input type="text" [(ngModel)]="user.adress" class="form-control" placeholder="adress">
-                                          
+                                            <input type="text" [(ngModel)]="user.adress" class="form-control" placeholder="adresse">
+                                            <div *ngIf="alertValidation.adress"class=" my-3  alert bg-danger text-white alert-styled-left alert-dismissible">champ obligatoire</div>
                                         </div>
                                     </div>
 
                                     <div class="col-md-6">
                                         <div class="form-group form-group-feedback form-group-feedback-right">
-                                            <input type="text" class="form-control" [(ngModel)]="user.phone" placeholder="phone">
-                                           
+                                            <input type="text" class="form-control" [(ngModel)]="user.phone" placeholder="Télephone">
+                                            <div *ngIf="alertValidation.phone"class=" my-3  alert bg-danger text-white alert-styled-left alert-dismissible">champ obligatoire</div>
                                         </div>
                                     </div>
                                 </div>
@@ -85,27 +85,26 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group form-group-feedback form-group-feedback-right">
-                                            <input type="text" [(ngModel)]="user.login" class="form-control" placeholder="Create login">
-                                          
+                                            <input type="text" [(ngModel)]="user.login" class="form-control" placeholder="login">
+                                            <div *ngIf="alertValidation.login"class=" my-3  alert bg-danger text-white alert-styled-left alert-dismissible">champ obligatoire</div>
                                         </div>
                                     </div>
 
                                     <div class="col-md-6">
                                         <div class="form-group form-group-feedback form-group-feedback-right">
-                                            <input type="password" class="form-control" [(ngModel)]="user.password" placeholder="create password">
-                                           
+                                            <input type="password" class="form-control" [(ngModel)]="user.password"minlenght="3" placeholder="mot de passe">
+                                            <div *ngIf="alertValidation.password"class=" my-3  alert bg-danger text-white alert-styled-left alert-dismissible">champ obligatoire</div>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="form-group form-group-feedback form-group-feedback-right">
                                     <input #fileInput type="file" class="form-control">
-                                  
                                 </div>
 
                             
 
-                                <button (click)="register()" type="submit" class="btn bg-teal-400 btn-labeled btn-labeled-right"><b><i class="icon-plus3"></i></b> Create account</button>
+                                <button (click)="register()" type="submit" class="btn bg-teal-400 btn-labeled btn-labeled-right"><b><i class="icon-plus3"></i></b> Valider</button>
                             </div>
                         </div>
                     </div>

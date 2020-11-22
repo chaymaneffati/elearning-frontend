@@ -14,8 +14,8 @@
                         <div class="card mb-0">
                             <div class="card-body">
                                 <div class="text-center mb-3">
-                                    <h5 class="mb-0">Pour acceder au test</h5>
-                                    <span class="d-block text-muted">slectionner une formation </span>
+                                    <h5 class="mb-0">Gestion de test</h5>
+                                    <span class="d-block text-muted">séléctionner une formation </span>
                                 </div>
 
 
@@ -81,7 +81,7 @@
                             <div class="card-body">
                                 <div class="text-center mb-3 row">
                                     <h5 class="mb-0 ml-3">Liste des test de cette formation</h5>
-                                     <button (click)="newtest()" type="submit" class="ml-auto mr-2 btn bg-teal-400 btn-labeled btn-labeled-right"> new test</button>
+                                     <button (click)="newtest()" type="submit" class="ml-auto mr-2 btn bg-teal-400 btn-labeled btn-labeled-right"> Nouveau test</button>
                                    
                                 </div>
 
@@ -105,7 +105,7 @@
                                         <td>{{q.titre}}</td>
                                         <td><button (click)="voirDetailtest(q.id); idtestDeatil = q.id" class="btn btn-outline-info">Voir Test</button>
                                         
-                                        <button (click)="deletetest(q.id)" class="btn btn-danger">delete</button>
+                                        <button (click)="deletetest(q.id)" class="btn btn-danger">Supprimer</button>
                                         
                                         </td>
 
@@ -169,18 +169,18 @@
                         <div class="card mb-0">
                             <div class="card-body">
                                 <div class="text-center mb-3">
-                                    <h5 class="mb-0 ml-3">Create New test</h5>
+                                    <h5 class="mb-0 ml-3">Créer nouveau test</h5>
                                 </div>
 
 
                                 <div class="form-group form-group-feedback form-group-feedback-right">
-                                    <input type="text" class="form-control" [(ngModel)]="test.titre" placeholder="titre">
+                                    <input type="text" class="form-control" [(ngModel)]="test.titre" placeholder="Titre">
                                   
                                 </div>
 
 
                             
-                                <button (click)="ajout()" type="submit" class="btn bg-teal-400 btn-labeled btn-labeled-right"><b><i class="icon-plus3"></i></b> Create test</button>
+                                <button (click)="ajout()" type="submit" class="btn bg-teal-400 btn-labeled btn-labeled-right"><b><i class="icon-plus3"></i></b>Valider</button>
 
 
                               
@@ -236,7 +236,7 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group form-group-feedback form-group-feedback-right">
-                                            <input type="text" [(ngModel)]="question.text" class="form-control" placeholder="question">
+                                            <input type="text" [(ngModel)]="question.text" class="form-control" placeholder="Question">
                                           
                                         </div>
                                     </div>
@@ -303,7 +303,7 @@
                             <div class="col-md-3">
 
                                 
-                                <button (click)="ajoutOption()" type="submit" class="btn bg-teal-400 btn-labeled btn-labeled-right"><b><i class="icon-plus3"></i></b> add option</button>
+                                <button (click)="ajoutOption()" type="submit" class="btn bg-teal-400 btn-labeled btn-labeled-right"><b><i class="icon-plus3"></i></b> Ajouter</button>
 
 
                             </div>

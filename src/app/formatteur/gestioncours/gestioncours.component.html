@@ -1,5 +1,16 @@
 
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
 <div class="container">
 
 
@@ -17,10 +28,10 @@
                  	<!-- Extra large table -->
 				<div class="card " style="width: 1000px;">
 					<div class="card-header header-elements-inline">
-						<h5 class="card-title">Extra large table</h5>
+						<h5 class="card-title">Liste des cours</h5>
 						<div *ngIf="user.Role == 'prof'" class="header-elements">
 							<div class="list-icons">
-		                		<a routerLink="/formatteur/ajoutcours" class="btn btn-dark text-white" >Add</a>
+		                		<a routerLink="/formatteur/ajoutcours" class="btn btn-success text-white" >Ajouter</a>
 		                	
 		                	</div>
 	                	</div>
@@ -29,13 +40,13 @@
 				
 
 					<div class="table-responsive">
-						<table class="table table-xl">
+						<table class="table table-striped">
 							<thead>
 								<tr>
 									<th>#</th>
 									<th>titre</th>
 									<th>date</th>
-                                    <th>file</th>
+                                    <th>fichier</th>
 									<th>Action</th>
                                     
                                     
@@ -46,11 +57,11 @@
 									<td>{{f.id}}</td>
 									<td>{{f.titre}}</td>
                                     <td>{{f.date}}</td>
-									<td><a [href]="'http://127.0.0.1/portfolio/assets/cours/'+ f.fichier" target="_blank" class="btn btn-outline-info">show</a></td>
+									<td><a [href]="'http://127.0.0.1/portfolio/assets/cours/'+ f.fichier" target="_blank" class="btn btn-outline-info">Voir cours</a></td>
 									
-                                    <td> <button (click)="delete(f.id)" class="btn btn-danger">Delete</button>
+                                    <td> <button (click)="delete(f.id)" class="btn btn-danger">Supprimer</button>
                                     
-                                     <a [routerLink]="[ '/formatteur/updatecours', f.id ]" class="btn btn-info" *ngIf="user.Role == 'prof'">  Update</a> 
+                                     <a [routerLink]="[ '/formatteur/updatecours', f.id ]" class="btn btn-info" *ngIf="user.Role == 'prof'">  Modifier</a> 
                                     </td>
 								</tr>
 								
@@ -71,3 +82,5 @@
 
 
 </div>
+</body>
+</html>
