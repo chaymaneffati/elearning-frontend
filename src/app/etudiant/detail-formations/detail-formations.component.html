@@ -33,14 +33,14 @@
 								<div class="tab-pane fade show active" id="course-overview">
 									<div class="card-body">
 										<div class="mt-1 mb-4">
-											<h6 class="font-weight-semibold">Formation</h6>
+											<h6 class="font-weight-semibold">Description</h6>
                                             <p>{{formation?.description}}</p>
                                             
 
                                         
 
                                             <div *ngIf="voirCours">
-                                                <h6 class="font-weight-semibold">Liste des cours</h6>
+                                                <h6 class="font-weight-semibold">Liste des supports de cours</h6>
                                                 <table class="table">
 
                                                     <tr *ngFor="let c of cours; ">
@@ -50,7 +50,7 @@
                                                         </td>
 
                                                         <td>
-                                                            <a class="btn btn-outline-primary" [href]="'http://127.0.0.1/portfolio/assets/cours/'+ c?.fichier" target="_blank"> Télecharger cours </a>
+                                                            <a class="btn btn-outline-primary" [href]="'http://127.0.0.1/portfolio/assets/cours/'+ c?.fichier" target="_blank"> Télecharger chapitre </a>
                                                         </td>
                                                     </tr>
 
@@ -86,7 +86,7 @@
                         
 
                     
-                        <textarea [(ngModel)]="commentaire.commentaire" class="form-control" name="" id="" cols="30" rows="3" placeholder="comment..."></textarea>
+                        <textarea [(ngModel)]="commentaire.commentaire" class="form-control" name="" id="" cols="30" rows="3" placeholder="commenter..."></textarea>
 
                         <button (click)="commenter()" class="btn btn-success mt-2" style="float:right" >envoyer</button>
             
@@ -141,7 +141,7 @@
 
                                 
                                 <div class="card-body pb-0"  *ngFor="let q of quizs; let i = index"  >
-									<a [routerLink]="['/etudiant/passerquiz' , q.id]" class="btn bg-teal-400 btn-block mb-2">Passer quiz {{i+1}}</a>
+									<button [routerLink]="['/etudiant/passerquiz' , q.id]" class="bg-dark">Passer quiz {{i+1}}</button>
 								</div>
 
                                 <div class="card-body pb-0"  *ngFor="let q of tests; let i = index">
@@ -187,12 +187,12 @@
 	<table class="table table-borderless table-xs border-top-0 my-2">
 									<tbody>
 										<tr>
-											<td class="font-weight-semibold">Durée:</td>
-											<td class="text-right">{{formation?.duree}} h</td>
+											<td class="font-weight-semibold" style="color:rgb(233, 127, 127);">Durée:</td>
+											<td class="text-right">{{formation?.duree}} </td>
 										</tr>
 									
 										<tr>
-											<td class="font-weight-semibold">date:</td>
+											<td class="font-weight-semibold"style="color:rgb(233, 127, 127);">date de création:</td>
 											<td class="text-right">{{formation?.date}}</td>
 										</tr>
 									
@@ -200,13 +200,9 @@
 										
 										
 										<tr>
-											<td class="font-weight-semibold">Avis:</td>
+											<td class="font-weight-semibold"style="color:rgb(233, 127, 127);">Formateur:</td>
 											<td class="text-right text-muted">
-												<i class="icon-star-full2 font-size-base text-warning-300"></i>
-												<i class="icon-star-full2 font-size-base text-warning-300"></i>
-												<i class="icon-star-full2 font-size-base text-warning-300"></i>
-												<i class="icon-star-full2 font-size-base text-warning-300"></i>
-												<i class="icon-star-full2 font-size-base text-warning-300"></i>
+												{{formatteur?.name}} {{formatteur?.lastname}}
 											</td>
 										</tr>
 									</tbody>
